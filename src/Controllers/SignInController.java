@@ -6,6 +6,7 @@
 package Controllers;
 
 import Models.User;
+import java.util.Collections;
 import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,9 +36,10 @@ public class SignInController {
     void signIn(ActionEvent event) {
        UserDAOImpl dAOImpl = new UserDAOImpl();
        List<User> userList = dAOImpl.getAllUsers();
-       List<String> passwordList = dAOImpl.checkPassword(signInUsername.getText());
+       List<String> passwordList = Collections.EMPTY_LIST;
        
-       System.out.println("Password: " + passwordList.get(0));
+       
+      // System.out.println("Password: " + passwordList.get(0));
        
        boolean flag = false;
        
@@ -51,10 +53,16 @@ public class SignInController {
                System.out.println("User name matched");
            }
        }
-       if(flag = true && signInPassword.getText().equals(passwordList.get(0))){
-           showErrorMessage("Welcome");
+       if (flag){
+           passwordList = dAOImpl.checkPassword(signInUsername.getText());
+           if(signInPassword.getText().equals(passwordList.get(0))){
+              showErrorMessage("Welcome");  
+           }
+           else{
+             showErrorMessage("Your password is wrong, please write again!"); 
+           }
        } else {
-            showErrorMessage("Your username or password is wrong, please write again!");
+           showErrorMessage("Your username or password is wrong, please write again!"); 
        }
        
        signInUsername.setText("");
