@@ -36,7 +36,7 @@ public class FXMLDocumentController implements Initializable {
         
         t.setOnFinished((e) -> {
             try {
-                fxml = FXMLLoader.load(getClass().getResource("/GUI/SignIn.fxml"));
+                fxml = FXMLLoader.load(getClass().getResource("/Views/SignIn.fxml"));
                 vbox.getChildren().removeAll();
                 vbox.getChildren().setAll(fxml);
             }
@@ -53,7 +53,7 @@ public class FXMLDocumentController implements Initializable {
         
         t.setOnFinished((e) -> {
             try {
-                fxml = FXMLLoader.load(getClass().getResource("/GUI/SignIn.fxml"));
+                fxml = FXMLLoader.load(getClass().getResource("/Views/SignIn.fxml"));
                 vbox.getChildren().removeAll();
                 vbox.getChildren().setAll(fxml);
             }
@@ -69,7 +69,7 @@ public class FXMLDocumentController implements Initializable {
         
         t.setOnFinished((e) -> {
             try {
-                fxml = FXMLLoader.load(getClass().getResource("/GUI/SignUp.fxml"));
+                fxml = FXMLLoader.load(getClass().getResource("/Views/SignUp.fxml"));
                 vbox.getChildren().removeAll();
                 vbox.getChildren().setAll(fxml);
             }
