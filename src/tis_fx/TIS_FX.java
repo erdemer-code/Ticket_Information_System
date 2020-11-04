@@ -23,7 +23,7 @@ public class TIS_FX extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-      Parent root = FXMLLoader.load(getClass().getResource("/GUI/FXMLDocument.fxml"));
+      Parent root = FXMLLoader.load(getClass().getResource("/Views/FXMLDocument.fxml"));
       Scene scene = new Scene(root);
       scene.setFill(Color.TRANSPARENT);
       stage.initStyle(StageStyle.TRANSPARENT);
